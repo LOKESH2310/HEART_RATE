@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <title>HR APP</title>
+    <link href="{{url_for( 'static' , filename = 'css/style.css')}}" rel = "stylesheet">
+  </head>
+  <body>
+    <h1>HEART RATE</h1>
+    <form method="POST" action="" enctype="multipart/form-data">
+      <p><input type="file" name="file"></p>
+      <p><input type="submit" value="Submit"></p>
+    </form>
+    {% if heart %}
+      <p> HEART_RATE: {{heart}} </p>
+      <img src= "{{image}}" height="300"
+        alt="An image of heart">
+    {% endif %}
+    <form method="GET" >
+      <p><input type="submit" value="Clear"></p>
+    </form>
+  </body>
+</html>
