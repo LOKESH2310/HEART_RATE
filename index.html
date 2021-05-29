@@ -2,21 +2,64 @@
 <html>
   <head>
     <title>HR APP</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="{{url_for( 'static' , filename = 'css/style.css')}}" rel = "stylesheet">
   </head>
   <body>
-    <h1>HEART RATE</h1>
+  <div class="left">
+    <h2>Common facts about Heart Rate <br> you should know ...</h2>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYtFkI2Mhh5YTeDerObnoL7we4nlr_KUxC8g&usqp=CAU",
+        height="200" alt="An image of heart">
+    <h4>
+      <ul>
+
+        <li>Your heart will beat about 115,000 times each day.</li>
+
+        <li>Each day, your heart pumps about 2,000 gallons of blood.</li>
+        <li>If you were to stretch out your blood vessel system, it would extend over 60,000 miles.</li>
+        <li>A woman’s heart beats slightly faster than a man’s.</li>
+        <li>Laughing is good for your heart. It reduces stress and gives a boost to your immune system.</li>
+      </ul>
+    </h4>
+  </div>
+
+  <div class="middle">
+  <h1>_.H E A R T._.R A T E._</h1>
+
     <form method="POST" action="" enctype="multipart/form-data">
       <p><input type="file" name="file"></p>
-      <p><input type="submit" value="Submit"></p>
+      <p><input type="submit" value="Submit" ></p>
+
     </form>
+
     {% if heart %}
-      <p> HEART_RATE: {{heart}} </p>
+      <h3 style="display:none;"></h3>
+      <h2> HEART_RATE: {{heart}} </h2>
       <img src= "{{image}}" height="300"
         alt="An image of heart">
     {% endif %}
     <form method="GET" >
       <p><input type="submit" value="Clear"></p>
     </form>
+  </div>
+
+  <div class="right">
+    <h2>know how to do video?<br>and know how this works?</h2>
+      <img src="data:image/jpeg;base64,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"
+        height="200" alt="An image" >
+      <h4>
+        <ul>
+          <li>Place a finger like this, that should cover camera and flashlight.</li>
+          <li>Then start recording the video upto 20 seconds.</li>
+          <li>After that save it in format mp4.</li>
+          <li>Upload it in this webside.</li>
+          <li>Press submit button,wait for few minutes....</li>
+          <li>Now, you will get your Heart Rate.</li>
+        </ul>
+        <p></p>
+      </h4>
+  </div>
+
   </body>
 </html>
